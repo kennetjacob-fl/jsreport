@@ -47,7 +47,10 @@ module.exports = function (reporter, definition) {
       const params = {
         Bucket: options.bucket,
         Key: defaultBlobName,
-        Body: buffer
+        Body: buffer,
+        Metadata: {
+          'Content-Type': 'application/pdf',
+        },
       }
 
       return new Promise((resolve, reject) => {
